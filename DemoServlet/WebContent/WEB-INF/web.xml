@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>DemoServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>Home.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>companymail</param-name>
+    <param-value>Abhishek@gmail.com</param-value>
+  </context-param>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/gmail</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>serv1</servlet-name>
+    <servlet-class>com.FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv1</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>serv2</servlet-name>
+    <servlet-class>com.SecondServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv2</servlet-name>
+    <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>serv3</servlet-name>
+    <servlet-class>com.ThirdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv3</servlet-name>
+    <url-pattern>/third</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>serv4</servlet-name>
+    <servlet-class>com.DemoServletInstanceVar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv4</servlet-name>
+    <url-pattern>/Instance</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>serv5</servlet-name>
+    <servlet-class>com.DemoContext</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv5</servlet-name>
+    <url-pattern>/Context</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>serv6</servlet-name>
+    <servlet-class>com.DemoConfig</servlet-class>
+    
+     <init-param>
+    <param-name>Myname</param-name>
+    <param-value>Abhishek</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv6</servlet-name>
+    <url-pattern>/Config</url-pattern>
+    
+    
+  </servlet-mapping>
+</web-app>
