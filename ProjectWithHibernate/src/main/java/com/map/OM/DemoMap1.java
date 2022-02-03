@@ -51,6 +51,8 @@ public class DemoMap1 {
 		que.setAnswer(l);
 		
 		
+		
+		
 		//Session
 		
 		Session s=factory.openSession();
@@ -62,6 +64,21 @@ public class DemoMap1 {
 		s.save(que);
 		
 		tx.commit();
+		
+		
+		//Display Question and its Answers
+		
+			Question1 q=(Question1)s.get(Question1.class,111);
+			System.out.println(q.getQuestion());                                               //get Question
+			
+			for(Answer1 a:q.getAnswer())                                                        //Gete Answer using forEach loop
+			{
+				System.out.println(a);
+			}
+			
+				
+		
+		
 		
 		
 		s.close();

@@ -16,7 +16,7 @@ public class Question1 {
 	private String question;
 	
 	
-	@OneToMany
+	@OneToMany(mappedBy="question")
 	private List<Answer1> answer;
 	
 	public Question1() {

@@ -13,13 +13,13 @@ public class FetchDemo
         SessionFactory factory=cfg.buildSessionFactory();
         Session session=factory.openSession();
         
-        //Get method :
+        //Get() method :
         Employee emp=(Employee)session.get(Employee.class,103);
         System.out.println(emp);
         
         
         
-        //Load method:
+        //Load() method:
         
         Address ads=(Address)session.get(Address.class,1);
         System.out.println(ads);
