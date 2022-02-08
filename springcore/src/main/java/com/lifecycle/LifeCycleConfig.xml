@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <!-- All Annotation are enables -->
+ <context:annotation-config></context:annotation-config>
+ 
+ <!-- Using XML method -->
+ <bean class="com.lifecycle.Cake" name="C1" init-method="init"  destroy-method="destroy">
+      <property name="cPrice" value=" 10" />
+ </bean>
+
+ 
+ <!-- Using Interface -->
+ <bean class="com.lifecycle.Pepsi"  name="P1">
+ <property name="price" value="50" />
+ 
+ </bean>
+ 
+ 
+ <!-- Using Annotations -->
+ <bean class="com.lifecycle.Subject"  name="S1">
+ <property name="sName" value="Marathi" />
+  
+ </bean>
+ 
+ 
+ </beans>

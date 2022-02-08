@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ 
+<bean class="com.Autowire.UseXML.Address" name="adr">
+<property name="street" value="1234"/>
+<property name="city"  value="pune"/>
+</bean>
+<!-- 
+<bean class="com.Autowire.UseXML.Emp" name="emp11" autowire="byName"  />
+
+  -->
+<!-- using byType -->          <!--               
+<bean class="com.Autowire.UseXML.Emp" name="emp11" autowire="byType"  />
+  -->   
+
+<!-- using constructor  -->     
+<bean class="com.Autowire.UseXML.Emp" name="emp11" autowire="constructor"  />
+ 
+ </beans>

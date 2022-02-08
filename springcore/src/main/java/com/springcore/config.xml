@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+ 
+   
+<bean class="com.springcore.Student" name="student1" >
+
+<property name="studId" value="1111" />
+
+<property name="studName" value="Abhishek" />
+
+<property name="studAddress" value="Nagar" />
+
+</bean>
+
+
+
+<!-- using p schema set the value of student class (import p schema statement)-->
+<!--  
+<bean>
+     <bean class="com.springcore.Student" name="student1" p:studId="1113" p:studName="Chaitanya" p:"Pune"/>   
+</bean>
+                                          -->
+
+<bean class="com.springcore.Student" name="student2" >
+
+<property name="studId" value="1112" />
+
+<property name="studName" value="Siddhant" />
+
+<property name="studAddress" value="Nashik" />
+
+</bean>
+
+
+
+
+</beans>

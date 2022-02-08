@@ -15,7 +15,7 @@
     <property name="format_sql">true</property>
     
     <property name="hbm2ddl.auto">create</property>
-    
+     
       <!-- Annotation,Embedding,FetchData -->
      <mapping  class="com.tut.Employee" />
      <mapping  class="com.tut.Address"/>
@@ -36,6 +36,24 @@
       <!-- Object State -->
       <mapping  class="com.objectStates.Car"/>
       
+       
+       
+        <!-- HQL  -->
+      <mapping  class="com.HQL.Employee1"/>
+      
+      
+       <!-- Pegination concept -->
+      <mapping  class="com.pegination.StudentPegi"/>
+      
+     
+     <!-- Cascading -->
+     <mapping  class="com.cascade.Ans"/>
+     <mapping  class="com.cascade.Que"/>
+
+	<!--Inheritance  -->
+   <!--   <mapping class="com.inheritance.Teacher"/>
+    <mapping class="com.inheritance.PermanentTeacher"/>
+    <mapping class="com.inheritance.VisitngTeacher"/>  -->
      
   </session-factory>
 </hibernate-configuration>
