@@ -30,8 +30,10 @@ public class StudentDaoImpl implements StudentDao{
 
 	@Override
 	public boolean updateStudent(Student s) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		sessionfactory.getCurrentSession().saveOrUpdate(s);
+		
+		return true;
 	}
 
 	@Override

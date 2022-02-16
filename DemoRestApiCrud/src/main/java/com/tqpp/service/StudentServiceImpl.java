@@ -30,7 +30,7 @@ public class StudentServiceImpl implements studentService {
 	@Override
 	public boolean updateStudent(Student s) {
 		// TODO Auto-generated method stub
-		return false;
+		return sdao.updateStudent(s);
 	}
 
 	@Override
