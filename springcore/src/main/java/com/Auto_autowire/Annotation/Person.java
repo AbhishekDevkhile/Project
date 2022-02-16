@@ -1,10 +1,12 @@
 package com.Auto_autowire.Annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Person {
 //Autowire Annotation use in property
-//	@Autowired
+	@Autowired
+	@Qualifier("add1")
 	private Address add;
 
 	public Person() {

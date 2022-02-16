@@ -20,14 +20,13 @@
  <property name="city" value="Pune"/>
  
  </bean>
- <!-- 
+
  <bean class="com.Auto_autowire.Annotation.Address" name="add1">
  <property name="street" value="FC road"/>
  <property name="city" value="Pune"/>
  
  </bean>
-  -->
-  
+
   
  <bean class="com.Auto_autowire.Annotation.Person" name="per1" />
  

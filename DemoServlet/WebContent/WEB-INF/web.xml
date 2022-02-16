@@ -52,21 +52,82 @@
     <servlet-name>serv5</servlet-name>
     <url-pattern>/Context</url-pattern>
   </servlet-mapping>
-  
-  
-   <servlet>
+  <servlet>
     <servlet-name>serv6</servlet-name>
     <servlet-class>com.DemoConfig</servlet-class>
-    
-     <init-param>
-    <param-name>Myname</param-name>
-    <param-value>Abhishek</param-value>
-  </init-param>
+    <init-param>
+      <param-name>Myname</param-name>
+      <param-value>Abhishek</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>serv6</servlet-name>
     <url-pattern>/Config</url-pattern>
-    
-    
   </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>serv7</servlet-name>
+    <servlet-class>com.DemoCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv7</servlet-name>
+    <url-pattern>/cookie</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>serv8</servlet-name>
+    <servlet-class>com.RefDemoCookie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv8</servlet-name>
+    <url-pattern>/cookie2</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>serv9</servlet-name>
+    <servlet-class>com.DemoCookie3Delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv9</servlet-name>
+    <url-pattern>/cookie3</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>serv10</servlet-name>
+    <servlet-class>com.DemoHidden1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv10</servlet-name>
+    <url-pattern>/hidden1</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>serv11</servlet-name>
+    <servlet-class>com.DemoHidden2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv11</servlet-name>
+    <url-pattern>/hidden2</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>loginfilter1</filter-name>
+    <filter-class>com.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginfilter1</filter-name>
+    <url-pattern>/first</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>filter2</filter-name>
+    <filter-class>com.LoginFilter2</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filter2</filter-name>
+    <url-pattern>/first</url-pattern>
+  </filter-mapping>
 </web-app>
