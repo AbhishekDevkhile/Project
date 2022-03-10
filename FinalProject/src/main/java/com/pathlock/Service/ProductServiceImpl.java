@@ -39,6 +39,15 @@ public class ProductServiceImpl implements ProductService{
 		return pdao.getProductById(id);
 	}
 
+	@Override
+	public boolean manageStock(int id, int q) {
+		
+		pdao.manageStock(id, q);
+		
+		return true;
+		
+	}
+
 	
 	
 }

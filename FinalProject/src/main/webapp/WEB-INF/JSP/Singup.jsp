@@ -40,7 +40,6 @@ body {
                     <label for="firstName" class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-9">
                         <input type="text" name="uname" id="firstName" placeholder="Name" class="form-control" autofocus>
-                        
                     </div>
                 </div>
                 <div class="form-group">
@@ -75,13 +74,13 @@ body {
                     </div>
                 </div> <!-- /.form-group -->
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Age</label>
+                    <label for="age" class="col-sm-3 control-label">Age</label>
                     <div class="col-sm-9">
                         <input type="text" name="uage" id="password" placeholder="Age" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Contact</label>
+                    <label for="contact" class="col-sm-3 control-label">Contact</label>
                     <div class="col-sm-9">
                         <input type="text" name="uph" id="password" placeholder="Contact" class="form-control">
                     </div>

@@ -16,6 +16,9 @@ public interface ProductDao {
 	List<Product> getAllProducts();
 
 	Product getProductById(int id);
+	
+	boolean manageStock(int id,int q);
+	
 }
 
 

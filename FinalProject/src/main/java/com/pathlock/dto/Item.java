@@ -10,6 +10,7 @@ public class Item implements Serializable
 	private String itemname;
 	private int itemprice;
 	private String itemcolor;
+	
 	private int quantity;
 	public Item() {
 		super();

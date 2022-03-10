@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Edit Admin</title>
+ 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,8 +23,8 @@
   <form action="save">
     <div class="form-group">
     
-      <label for="pwd">Product Name:</label>
-      <input type="text" class="form-control" id="pwd"  name="pname">
+      <label for="nm">Product Name:</label>
+      <input type="text" class="form-control" id="nm"  name="pname">
     </div>
     
     <div class="form-group">
@@ -35,6 +35,11 @@
      <div class="form-group">
       <label for="pwd">Product Color:</label>
       <input type="text" class="form-control" id="pwd"   name="pcolor">
+    </div>
+    
+    <div class="form-group">
+      <label for="quan">Product Quantity:</label>
+      <input type="text" class="form-control" id="quan"   name="pqun">
     </div>
     
     <h3 align="center" >

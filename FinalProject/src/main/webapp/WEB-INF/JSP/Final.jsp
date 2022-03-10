@@ -7,8 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h4 align="right" >
+    <a class="btn btn-primary" style="align-self: center" href="logout" role="button">Logout</a>
+    </h4>
+
 
 <h1>Order placed and dispatch soon</h1>
 
+
+
+<h4 align="center" >
+    <a class="btn btn-primary" style="align-self: center" href="go" role="button">Back</a>
+    </h4>
 </body>
 </html>

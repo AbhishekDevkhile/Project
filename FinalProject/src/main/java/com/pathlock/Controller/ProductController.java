@@ -88,20 +88,22 @@ public class ProductController {
 	}
 	
 	@GetMapping("/save")
-	public String saveProduct(@RequestParam("pname") String pname, @RequestParam("price") int price,@RequestParam("pcolor") String pcolor) throws Exception
+	public String saveProduct(@RequestParam("pname") String pname, @RequestParam("price") int price,@RequestParam("pcolor") String pcolor,@RequestParam("pqun") int quantity) throws Exception
 	{
 		
-		Product ob=new Product(pname,price,pcolor);
+		Product ob=new Product(pname,price,pcolor,quantity);
 		productservice.insertProduct(ob);
 		return  "redirect:/productadmin";
 	}
 	
 	@GetMapping("/update")
-	public String updateProduct(@RequestParam("pname") String pname, @RequestParam("price") int price,@RequestParam("pcolor") String pcolor) throws Exception
+	public String updateProduct(@RequestParam("pid")int id,@RequestParam("pname") String pname, @RequestParam("price") int price,@RequestParam("pcolor") String pcolor) throws Exception
 	{
-		
-		Product ob=new Product(pname,price,pcolor);
-		productservice.updateProduct(ob);
+		Product obj=productservice.getProductById(id);
+		obj.setProductName(pname);
+		obj.setProductColor(pcolor);
+		obj.setProductPrice(price);
+		productservice.updateProduct(obj);
 		return  "redirect:/productadmin";
 	}
 	

@@ -37,8 +37,6 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public boolean insertUser(User u) {
 		
-
-		
 		String pass=u.getUserpassword();
 		String encodepass=passEncoder.encode(pass);
 		u.setUserpassword(encodepass);

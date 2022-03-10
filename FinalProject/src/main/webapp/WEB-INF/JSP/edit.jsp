@@ -21,24 +21,34 @@
     <a class="btn btn-primary" style="align-self: center" href="logout" role="button">Logout</a>
     </h4>
   <form action="update" >
+  
+  
+  
+    <div class="form-group">
+      <label for="pid">Product Id:</label>
+      <input type="text" class="form-control" value="${product.getProductId()}" id="pid"  name="pid" required="required" readonly="readonly">
+    </div>
+  
+  
+   
    
     <div class="form-group">
-      <label for="pwd">Product Name:</label>
-      <input type="text" class="form-control" value="${product.getProductName()}" id="pwd"  name="pname">
+      <label for="pnm">Product Name:</label>
+      <input type="text" class="form-control" value="${product.getProductName()}" id="pnm"  name="pname">
     </div>
     <div class="form-group">
-      <label for="id">Product Price:</label>
-      <input type="text" class="form-control" value="${product.getProductPrice()}" id="id" name="price">
+      <label for="price">Product Price:</label>
+      <input type="text" class="form-control" value="${product.getProductPrice()}" id="price" name="price">
     </div>
     <div class="form-group">
-      <label for="pwd">Product Color:</label>
-      <input type="text" class="form-control" value="${product.getProductColor()}" id="pwd"  name="pcolor">
+      <label for="clr">Product Color:</label>
+      <input type="text" class="form-control" value="${product.getProductColor()}" id="clr"  name="pcolor">
     </div>
  
     <button type="submit" class="btn btn-default">Submit</button>
     
     <h4 align="center" >
-    <a class="btn btn-primary" style="align-self: center" href="productadmin" role="button">Back</a>
+    <a class="btn btn-primary" style="align-self: center" href="go" role="button">Back</a>
     </h4>
     
   </form>

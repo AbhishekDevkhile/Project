@@ -70,7 +70,8 @@
 </div>
 
 <br>
-<h4> &nbsp; &nbsp; &nbsp; &nbsp; 
-<a href="productuser" >Back  </a></h4>
+<h4 align="center" >
+    <a class="btn btn-primary" style="align-self: center" href="productuser" role="button">Back</a>
+    </h4>
 </body>
 </html>

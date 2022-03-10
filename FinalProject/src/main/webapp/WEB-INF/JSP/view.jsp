@@ -14,12 +14,13 @@
 
 </head>
 <body >
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
     
       <a class="navbar-brand" href="add">Add Products</a>
-      <span style="color:Red;text-align:right;position:relative;left:1200px;font-Size:25px; ">Hiiii ${username}</span>
+      <span style="color:white;text-align:right;position:relative;left:1150px;font-Size:25px; ">Hello ${username}</span>
     </div>
     
   </div>
@@ -27,7 +28,10 @@
 <h4 align="right" >
     <a class="btn btn-primary" style="align-self: center" href="logout" role="button">Logout</a>
     </h4>
-
+    
+    <h1 style="color:black;text-align:center;position:relative;font-Size:50px; ">Product</h1>
+    
+</div>
 <h4 align="center" >
 <input id="myInput" type="text" placeholder="Search Products..." size=35">
 </h4>
@@ -41,6 +45,9 @@
 <th>Product_Name</th>
 <th>Product_Price</th>
 <th>Product_Color</th>
+<th>Stock_In_Hand</th>
+
+
 <th>Action</th>
  <tbody id="myTable">
       </tr>
@@ -50,6 +57,8 @@
 <td>${p1.getProductName()}</td>
 <td>${p1.getProductPrice()}</td>
 <td>${p1.getProductColor()}</td>
+<td>${p1.getStockinHand()}</td>
+
 <td><a href="edit?id=${p1.getProductId()}">Edit</a>
 <a href="delete?id=${p1.getProductId()}">Delete</a>
 </td>

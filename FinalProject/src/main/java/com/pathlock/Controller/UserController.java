@@ -12,11 +12,13 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pathlock.Exceptions.StockNotAvailableException;
 import com.pathlock.Model.Order;
 import com.pathlock.Model.OrderDetails;
 import com.pathlock.Model.Product;
@@ -137,6 +139,7 @@ public class UserController {
 	@GetMapping("/cart")
 	public String addCard(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
+		ArrayList<Item> list = (ArrayList<Item>) session.getAttribute("cartlist");
 		if (session == null)
 			return "redirect:/firstview";
 		else {
@@ -144,15 +147,38 @@ public class UserController {
 			Double total = (Double) session.getAttribute("total");
 
 			Product p = productservice.getProductById(Pid);
-			total = total + p.getProductPrice() * 1;
-			ArrayList<Item> al = (ArrayList<Item>) session.getAttribute("cartlist");
-			al.add(new Item(p.getProductId(), p.getProductName(), p.getProductPrice(), p.getProductColor(), 1));
-			System.out.println("*****************************"+al);
-			session.setAttribute("cartlist", al);
+			
+           int qun = Integer.parseInt(request.getParameter("quan"));
+			total=total+p.getProductPrice()*qun;
+			boolean isPresent =false;
+			for(Item i: list)
+			{
+				if(i.getItemid()==p.getProductId())
+				{
+					int q=i.getQuantity();
+					i.setQuantity(q+qun);
+					isPresent =true;
+				}
+			}
+			
+			if(!isPresent)
+			{
+				
+		
+			list.add(new Item(p.getProductId(), p.getProductName(), p.getProductPrice(), p.getProductColor(),qun));
+			
+			
+			}
+			
+			session.setAttribute("itemlist", list);
 			session.setAttribute("total", total);
-
+			
 			return "forward:/productuser";
+			
+			
 		}
+							
+		
 	}
 
 	@GetMapping("/viewcart")
@@ -168,7 +194,7 @@ public class UserController {
 		}
 		return "viewcart";
 	}
-
+/*
 	@GetMapping("/placeorder")
 	public String placeorder(HttpServletRequest req) {
 	//	System.out.println("in place orderrrrrrrrrrrrr");
@@ -181,6 +207,7 @@ public class UserController {
 		User u = uservice.getUserById(uid);
 
 		Order or = new Order();
+	//	or.setOrder_status("Placed");
 		or.setOrderDate(LocalDate.now());
 		or.setUser(u);
 		List<OrderDetails> or_details = or.getOrderdetails();
@@ -198,8 +225,56 @@ public class UserController {
 
 		return "Final";
 	}
-
+*/
 	
+	
+	
+	@GetMapping("/placeorder")
+	public String placeorder(HttpServletRequest req) throws StockNotAvailableException  {
+	//	System.out.println("in place orderrrrrrrrrrrrr");
+		HttpSession httpsession = req.getSession(false);
+
+		ArrayList<Item> cart = (ArrayList<Item>) httpsession.getAttribute("cartlist");
+		List<Product> plist = productservice.getAllProducts();
+
+		int uid = (int) httpsession.getAttribute("userid");
+		User u = uservice.getUserById(uid);
+
+		Order or = new Order();
+		or.setOrder_status("Placed");
+		or.setOrderDate(LocalDate.now());
+		or.setUser(u);
+		List<OrderDetails> or_details = or.getOrderdetails();
+
+		for (Product p : plist) {
+			for (Item item : cart) {
+				if (item.getItemid() == p.getProductId()) {
+	
+				//	productservice.manageStock(p.getProductId(),item.getQuantity();		
+				//	or_details.add(new OrderDetails(or, p, item.getQuantity()));
+					if((p.getStockinHand()-item.getQuantity())<0)
+						{
+							throw new StockNotAvailableException("Stock Not Available");
+						}
+						else
+						{
+							
+						productservice.manageStock(p.getProductId(),item.getQuantity());
+						
+						or_details.add(new OrderDetails(or, p, item.getQuantity()));
+					
+						}
+					  
+					
+				}
+			}
+
+		}
+
+		orderservice.addOrder(or);
+
+		return "Final";
+	}
 	
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest req)
@@ -212,6 +287,14 @@ public class UserController {
 		}
 		
 		return "firstview";
+	}
+	
+	
+	
+	@ExceptionHandler(value=StockNotAvailableException.class)
+	public String stockException(Exception e)
+	{
+		return "stockError";
 	}
 	
 }

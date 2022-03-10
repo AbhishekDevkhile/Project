@@ -13,9 +13,10 @@
 <title>Insert title here</title>
 </style>
 </head>
-<body >
+<body style="margin-left:400px;margin-top:100px;" >
+
 <form action="validateuser" method="get" >
-<section class="vh-100 gradient-custom">
+<section class="vh-100 gradient-custom" style="align-self: center">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -23,9 +24,9 @@
           <div class="card-body p-5 text-center">
 
             <div class="mb-md-5 mt-md-4 pb-5">
-
+               <h2 class="fw-bold mb-2 text-uppercase">Shopping Cart!!</h2> 
               <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your Username and password!</p>
+              <p class="text-white-50 mb-5">Please enter your Username and password!</p> 
 
               <div class="form-outline form-white mb-4" >
                 <input type="text" name="userName" id="typeEmailX" class="form-control form-control-lg" />
@@ -48,5 +49,6 @@
   </div>
 </section>
 </form>
+
 </body>
 </html>
